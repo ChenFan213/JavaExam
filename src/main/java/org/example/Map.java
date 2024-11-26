@@ -26,5 +26,11 @@ public class Map extends Canvas {
         for (Shape shape : shapes) {
             shape.draw(g);
         }
+        // repaint the map every one second, getting new locations of keeper/lion/drone
+        try {Thread.sleep(1000);}
+        catch(Exception e){}
+
+        repaint();
     }
+
 }
