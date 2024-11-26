@@ -18,9 +18,9 @@ repositories {
 
 dependencies {
     // Libraries to use for Unit Testing
+    implementation group: 'com.google.code.gson',name:'gson',version: '2.7'
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
-    implementation group: 'com.google.code.gson', name:'gson', version: '2.7'
 }
 test {
     useJUnitPlatform()
