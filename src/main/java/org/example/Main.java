@@ -10,6 +10,12 @@ public class Main {
         Frame frame = new Frame("Wildlife Park Layout");
         frame.setSize(600,600);
 
+        // instantiate a map to add onto the frame
+        Map map = new Map();
+        map.setSize(600,600);
+        // adding whatever is on the map to the frame
+        frame.add(map);
+
         frame.setVisible(true); // make tha frame visible
         frame.addWindowListener(new WindowAdapter() { // close frame when clicking close
             public void windowClosing(WindowEvent e) {

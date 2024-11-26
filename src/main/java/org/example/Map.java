@@ -1,27 +1,30 @@
 package org.example;
+
+import Shapes.Shape;
 import Shapes.Circles;
 import Shapes.Square;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 // this class draws the locations of Keeper, Lion, Drone on the canva
 public class Map extends Canvas {
 
     private Circles circles;
     private Square square;
+    private ArrayList<Shape> shapes;
 
     public Map(){
-        // draw a blue circle of radius 2 for the keepers
-        this.circles = new Circles(2,new Point(200,200),Color.BLUE);
-        // draw a red circle of radius 3 for the lions
-        this.circles = new Circles(3,new Point(300,300),Color.RED);
-        // draw a black square of width 3 for the drones
-        this.square = new Square(3,new Point(100,100),Color.BLACK);
+        shapes = new ArrayList<>();
+        // adding different shapes into the ArrayList, for Keeper/Lion/Drone respectively
+        shapes.add((Shape) new Circles(2,new Point(400,400),Color.BLUE)); // Keeper
+        shapes.add((Shape) new Circles(3,new Point(300,300),Color.RED)); // Lion
+        shapes.add((Shape) new Square(3,3,new Point(500,500),Color.BLACK)); // Drone
     }
     public void paint(Graphics g) {
-        // draw a circle
-        circles.draw(g);
-        // draw a square
-        square.draw(g);
+        // a paint method to draw each shape created
+        for (Shape shape : shapes) {
+            shape.draw(g);
+        }
     }
 }
