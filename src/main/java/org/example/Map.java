@@ -14,6 +14,11 @@ public class Map extends Canvas {
     private Square square;
     private ArrayList<Shape> shapes;
 
+    private Park park;
+    private Keeper keeper;
+    private Lion lion;
+    private Drone drone;
+
     public Map(){
         shapes = new ArrayList<>();
         // adding different shapes into the ArrayList, for Keeper/Lion/Drone respectively
@@ -25,7 +30,9 @@ public class Map extends Canvas {
         // a paint method to draw each shape created
         for (Shape shape : shapes) {
             shape.draw(g);
+            g.drawString("Keeper Name: "+keeper.getName()+"Phone Number"+keeper.getPhoneNum(),400,400);
         }
+
         // repaint the map every one second, getting new locations of keeper/lion/drone
         try {Thread.sleep(1000);}
         catch(Exception e){}
